@@ -22,6 +22,6 @@
 - name: Copy the Htdocs content
   copy:
     src: /tmp/frontend-main/static/
-     dest: /usr/share/nginx/html/
-     remote_src: yes
+    dest: /usr/share/nginx/html/
+    remote_src: yes
 

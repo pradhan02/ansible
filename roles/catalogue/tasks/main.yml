@@ -24,7 +24,7 @@
 - name: Install NodeJS
   ansible.builtin.yum:
     name: [ "nodejs", "make" , "gcc-c++ ]
-     state: present
+    state: present
 
 - name: Add roboshop app user
   ansible.builtin.user:
@@ -50,4 +50,4 @@
 - name: Install Nodejs dependencies
   community.general.npm:
     path: /home/roboshop/catalogue
-    become_user: roboshop
+  become_user: roboshop

@@ -23,14 +23,12 @@
 #  # systemctl enable catalogue
 - name: Install NodeJS
   ansible.builtin.yum:
-    yum:
-      name: [ "nodejs", "make" , "gcc-c++ ]
-      state: present
+    name: [ "nodejs", "make" , "gcc-c++ ]
+     state: present
 
 - name: Add roboshop app user
   ansible.builtin.user:
-    user:
-      name: roboshop
+    name: roboshop
 
 - name: Download code
   ansible.builtin.include_role:

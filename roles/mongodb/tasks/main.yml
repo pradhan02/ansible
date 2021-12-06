@@ -4,7 +4,7 @@
     dest: /etc/yum.repos.d/,ongodb.repo
 
 - name: Install Mongodb
-  ansible.builtin.copy:
+  ansible.builtin.yum:
     name: mongodb-org
     state: present
 

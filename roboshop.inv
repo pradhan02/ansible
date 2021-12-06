@@ -2,12 +2,12 @@
 frontend-dev.roboshop.internal
 [cart]
 cart-dev.roboshop.internal
-[catalopgue]
+[catalogue]
 catalogue-dev.roboshop.internal
 [payment]
 payment-dev.roboshop.internal
 [shipping]
-shipping-dev.roboshop.inernal
+shipping-dev.roboshop.internal
 [mysql]
 mysql-dev.roboshop.internal
 [mongodb]

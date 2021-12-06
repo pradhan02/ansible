@@ -3,7 +3,7 @@ frontend-dev.roboshop.internal
 [cart]
 cart-dev.roboshop.internal
 [catalopgue]
-catalogue-dev.roboshop.inernal
+catalogue-dev.roboshop.internal
 [payment]
 payment-dev.roboshop.internal
 [shipping]

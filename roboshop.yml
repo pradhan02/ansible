@@ -19,3 +19,31 @@
   roles:
     - catalogue
 
+- name: Setup redis
+  hosts: redis
+  become: true
+  tags: redis
+  roles:
+    - redis
+
+#- name: Setup user
+#  hosts: user
+#  become: true
+#  tags: user
+#  roles:
+#    - user
+#
+#- name: Setup cart
+#  hosts: cart
+#  become: true
+#  tags: cart
+#  roles:
+#    - cart
+
+
+
+
+
+
+
+

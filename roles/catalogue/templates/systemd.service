@@ -7,4 +7,4 @@ ExecStart=/bin/node /home/roboshop/catalogue/server.js
 SyslogIdentifier=catalogue
 
 [Install]
-WantedBy=multi-user.target[
+WantedBy=multi-user.target

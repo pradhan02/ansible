@@ -3,40 +3,23 @@
     name: [ "nodejs", "make" , "gcc-c++" ]
     state: present
 
-- name: Add roboshop app user
-  ansible.builtin.user:
-    name: roboshop
 
 - name: Download code
   ansible.builtin.include_role:
     name: common
     tasks_from: download
+  vars:
+    APP_LOCATION: "/home/roboshop/{{COMPONENT}}"
+    APP_USER: roboshop
 
-- name: remove existing code
-  ansible.builtin.file:
-    path: /home/roboshop/{{COMPONENT}}
-    state: absent
 
-- name: copy app code
-  copy:
-    src: /tmp/{{COMPONENT}}-main/
-    dest: /home/roboshop/{{COMPONENT}}
-    remote_src: true
-  become_user: roboshop
 
 - name: Install Nodejs dependencies
   community.general.npm:
     path: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
 
-- name: Update systemd file
-  template:
-    src: systemd.service
-    dest: /etc/systemd/system/{{COMPONENT}}.service
-
-- name: start {{COMPONENT}} service
-  systemd:
-    name: "{{COMPONENT}}"
-    state: restarted
-    enabled: yes
-    daemon_reload: yes
+- name: Download syatemd
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: systemd

@@ -40,8 +40,33 @@
   roles:
     - cart
 
+- name: Setup mysql
+  hosts: mysql
+  become: true
+  tags: mysql
+  roles:
+    - mysql
 
+- name: Setup shipping
+  hosts: shipping
+  become: true
+  tags: shipping
+  roles:
+    - shipping
 
+- name: Setup rabbitmq
+  hosts: rabbitmq
+  become: true
+  tags: rabbitmq
+  roles:
+    - rabbitmq
+
+- name: Setup payment
+  hosts: payment
+  become: true
+  tags: payment
+  roles:
+    - payment
 
 
 
